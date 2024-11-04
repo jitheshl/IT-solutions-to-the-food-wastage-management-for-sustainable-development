@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Wastage Management Survey</title>
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body Styling */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #45a049;
+            background-size: cover;
+            background-position: center;
+            color: #333;
+        }
+
+        /* Container Styling */
+        .container {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            max-width: 500px;
+            margin: 100px auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 1s ease-in;
+        }
+
+        /* Header Styling */
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        /* Form and Label Styling */
+        form p {
+            margin-bottom: 10px;
+        }
+
+        label {
+            display: block;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+
+        /* Input Styling */
+        input[type="text"], input[type="email"] {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        /* Button Styling */
+        button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        /* Thank You Page Styling */
+        .thank-you {
+            text-align: center;
+            padding: 50px;
+            display: none;
+            animation: fadeIn 1s ease-in;
+        }
+
+        /* Hidden Class */
+        .hidden {
+            display: none;
+        }
+
+        /* Fade-in Animation */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Survey Form Container -->
+    <div class="container">
+        <h1>Food Wastage Management Survey</h1>
+        <form id="surveyForm" onsubmit="submitSurvey(event)">
+            <p>Please enter your details and answer the following questions:</p>
+            
+            <!-- Name and Email Fields -->
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <!-- Survey Questions -->
+            <label>1. How often do you throw away leftover food?</label>
+            <input type="text" required>
+
+            <label>2. Are you aware of the environmental impact of food waste?</label>
+            <input type="text" required>
+
+            <label>3. Do you plan meals to avoid excess food purchases?</label>
+            <input type="text" required>
+
+            <label>4. How often do you compost food scraps?</label>
+            <input type="text" required>
+
+            <label>5. Do you check food labels for expiration dates before buying?</label>
+            <input type="text" required>
+
+            <label>6. Do you feel restaurants serve portion sizes that encourage waste?</label>
+            <input type="text" required>
+
+            <label>7. What measures do you take to reduce food waste?</label>
+            <input type="text" required>
+
+            <label>8. Do you have access to food donation services in your area?</label>
+            <input type="text" required>
+
+            <label>9. How often do you store leftover food properly to eat later?</label>
+            <input type="text" required>
+
+            <label>10. Would you support initiatives that help reduce food waste?</label>
+            <input type="text" required>
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    <!-- Thank You Page -->
+    <div id="thankYouPage" class="thank-you hidden">
+        <h2>Thank you for completing the survey!</h2>
+        <p>Your feedback helps in creating sustainable food management solutions.</p>
+    </div>
+
+    <script>
+        function submitSurvey(event) {
+            event.preventDefault();
+
+            // Hide the form and show the thank-you page
+            document.getElementById("surveyForm").style.display = "none";
+            document.getElementById("thankYouPage").classList.remove("hidden");
+            document.getElementById("thankYouPage").style.display = "block";
+        }
+    </script>
+</body>
+</html>
